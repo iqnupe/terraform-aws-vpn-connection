@@ -30,6 +30,10 @@ resource "aws_vpn_connection" "default" {
   tunnel2_inside_cidr   = var.vpn_connection_tunnel2_inside_cidr
   tunnel1_preshared_key = var.vpn_connection_tunnel1_preshared_key
   tunnel2_preshared_key = var.vpn_connection_tunnel2_preshared_key
+  tunnel1_ike_versions                 = "ikev2"
+  tunnel1_phase1_dh_group_numbers      = [2, 14, 15, 16, 17, 18, 22, 23, 24]
+  tunnel1_phase1_encryption_algorithms = ["AES128", "AES256"]
+  tunnel1_phase1_integrity_algorithms  = ["SHA1", "SHA2-256"]
   tags                  = module.this.tags
 }
 
