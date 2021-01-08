@@ -37,6 +37,9 @@ resource "aws_vpn_connection" "default" {
   tunnel1_phase1_dh_group_numbers      = [2, 14, 15, 16, 17, 18, 22, 23, 24]
   tunnel1_phase1_encryption_algorithms = ["AES128", "AES256"]
   tunnel1_phase1_integrity_algorithms  = ["SHA1", "SHA2-256"]
+  tunnel1_phase2_dh_group_numbers      = [2, 14, 15, 16, 17, 18, 22, 23, 24]
+  tunnel1_phase2_encryption_algorithms = ["AES128", "AES256"]
+  tunnel1_phase2_integrity_algorithms  = ["SHA1", "SHA2-256"]
   tags                                 = module.this.tags
 }
 
